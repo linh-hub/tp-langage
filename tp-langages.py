@@ -9,8 +9,7 @@ def is_deterministic(a):
         
         for(source1,letter1,head1,push1,target1) in a.get_transitions():
             for(source2,letter2,head2,push2,target2) in a.get_transitions():
-                if (source1 == source2 and target1 == target2):
-                    if (letter1 == letter2 and head1 == head2):
+                if (source1 == source2 and letter1==letter2 and head1 == head2 and (target1!=target2 or push1!=push2 )or (letter1=="%" or letter2 =="%") ):
                         return False
         return True
 
